@@ -24,5 +24,5 @@ delete "/todos" do |env|
     TODOS[user_id] = [] of String
   end
   item = env.params.json["todo_idx"].as(Int64)
-  TODOS[user_id].delete(item)
+  TODOS[user_id].delete_at(item)
 end
