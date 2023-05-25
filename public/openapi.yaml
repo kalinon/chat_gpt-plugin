@@ -6,7 +6,7 @@ info:
 servers:
   - url: http://localhost:3000
 paths:
-  /todos/{user}:
+  /todos:
     get:
       operationId: getTodos
       summary: Get the list of todos
@@ -17,16 +17,11 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/getTodosResponse"
+        "401":
+          description: Unauthorized
     post:
       operationId: addTodo
       summary: Add a todo to the list
-      parameters:
-        - in: path
-          name: user
-          schema:
-            type: string
-          required: true
-          description: The name of the user.
       requestBody:
         required: true
         content:
@@ -36,16 +31,11 @@ paths:
       responses:
         "200":
           description: OK
+        "401":
+          description: Unauthorized
     delete:
       operationId: deleteTodo
       summary: Delete a todo from the list
-      parameters:
-        - in: path
-          name: user
-          schema:
-            type: string
-          required: true
-          description: The name of the user.
       requestBody:
         required: true
         content:
@@ -55,7 +45,8 @@ paths:
       responses:
         "200":
           description: OK
-
+        "401":
+          description: Unauthorized
 components:
   schemas:
     getTodosResponse:

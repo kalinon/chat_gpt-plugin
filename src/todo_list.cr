@@ -1,28 +1,28 @@
-TODOS = Hash(String, Array(String)).new
+TODOS = Hash(UUID, Array(String)).new
 
-post "/todos/:user" do |env|
-  name = env.params.url["user"]
-  unless TODOS[name]?
-    TODOS[name] = [] of String
+post "/todos" do |env|
+  user_id, convo_id = ChatGptHandler.parse_headers(env)
+  unless TODOS[user_id]?
+    TODOS[user_id] = [] of String
   end
   item = env.params.json["todo"].as(String)
-  TODOS[name] << item
+  TODOS[user_id] << item
 end
 
-get "/todos/:user" do |env|
-  name = env.params.url["user"]
-  unless TODOS[name]?
-    TODOS[name] = [] of String
+get "/todos" do |env|
+  user_id, convo_id = ChatGptHandler.parse_headers(env)
+  unless TODOS[user_id]?
+    TODOS[user_id] = [] of String
   end
   env.response.content_type = "application/json"
-  TODOS[name].to_json
+  TODOS[user_id].to_json
 end
 
-delete "/todos/:user" do |env|
-  name = env.params.url["user"]
-  if TODOS[name].nil?
-    TODOS[name] = [] of String
+delete "/todos" do |env|
+  user_id, convo_id = ChatGptHandler.parse_headers(env)
+  if TODOS[user_id].nil?
+    TODOS[user_id] = [] of String
   end
   item = env.params.json["todo_idx"].as(Int64)
-  TODOS[name].delete(item)
+  TODOS[user_id].delete(item)
 end

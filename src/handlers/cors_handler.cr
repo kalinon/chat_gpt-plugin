@@ -9,7 +9,7 @@ class CorsHandler < Kemal::Handler
   end
 
   def send_options(env)
-    env.response.headers.add "Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Cache-Control, Pragma, Expires, X-CSRF-Token, openai-conversation-id, openai-ephemeral-user-id"
+    env.response.headers.add "Access-Control-Allow-Headers", "*"
     env.response.headers.add "Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, PATCH"
     env.response.headers.add "Access-Control-Allow-Origin", "*"
     env.response.headers.add "Access-Control-Max-Age", "7200"
@@ -22,6 +22,7 @@ class CorsHandler < Kemal::Handler
 end
 
 static_headers do |response, filepath, filestat|
+  response.headers.add("Access-Control-Allow-Headers", "*")
   response.headers.add("Access-Control-Allow-Origin", "https://chat.openai.com")
   response.headers.add("Content-Size", filestat.size.to_s)
 end

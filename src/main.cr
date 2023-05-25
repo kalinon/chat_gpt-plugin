@@ -1,6 +1,6 @@
 require "kemal"
 require "./handlers"
-require "./routes"
 require "./todo_list"
+require "./routes"
 
 Kemal.run
