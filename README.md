@@ -1,4 +1,4 @@
-# chat_gpt-plugin
+# ChatGPT Crystal Plugin
 
 Crystal example of a Plugin for ChatGPT. Logic is based on the [plugins-quickstart](https://github.com/openai/plugins-quickstart) example.
 
