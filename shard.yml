@@ -16,6 +16,3 @@ dependencies:
   kemal:
     github: kemalcr/kemal
     version: ~> 1.4.0
-  open-api:
-    github: spoved/open-api.cr
-    version: ">= 0.2.9"

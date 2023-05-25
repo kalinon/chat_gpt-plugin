@@ -12,10 +12,6 @@ shards:
     git: https://github.com/kemalcr/kemal.git
     version: 1.4.0
 
-  open-api:
-    git: https://github.com/spoved/open-api.cr.git
-    version: 0.2.10
-
   radix:
     git: https://github.com/luislavena/radix.git
     version: 0.4.1

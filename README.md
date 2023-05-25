@@ -1,22 +1,21 @@
 # chat_gpt-plugin
 
-TODO: Write a description here
+Crystal example of a Plugin for ChatGPT. Logic is based on the [plugins-quickstart](https://github.com/openai/plugins-quickstart) example.
 
 ## Installation
 
-TODO: Write installation instructions here
+```sh
+shards install
+shards run
+```
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+<https://platform.openai.com/docs/plugins/>
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/chat_gpt-plugin/fork>)
+1. Fork it (<https://github.com/kalinon/chat_gpt-plugin/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -24,4 +23,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Holden Omans](https://github.com/your-github-user) - creator and maintainer
+- [Holden Omans](https://github.com/kalinon) - creator and maintainer
