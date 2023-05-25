@@ -1,0 +1,21 @@
+name: chat_gpt-plugin
+version: 0.1.0
+
+authors:
+  - Holden Omans <holden.omans@gmail.com>
+
+targets:
+  chat_gpt-plugin:
+    main: src/main.cr
+
+crystal: 1.8.1
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    version: ~> 1.4.0
+  open-api:
+    github: spoved/open-api.cr
+    version: ">= 0.2.9"
